@@ -175,7 +175,7 @@ def plot_map_with_contextily(photo_locations: list, output_file: str, title: str
 
     # 6. Añadir el basemap satelital con zoom ajustado a 15
     try:
-        ctx.add_basemap(ax, source=ctx.providers.Esri.WorldImagery, zoom=18)
+        ctx.add_basemap(ax, source=ctx.providers.Esri.WorldImagery, zoom=19)
         print("Basemap añadido correctamente.\n")
     except Exception as e:
         print(f"Error al añadir basemap: {e}\n")
