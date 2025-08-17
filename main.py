@@ -97,6 +97,7 @@ def get_gps_coordinates(image_path: str) -> Optional[Tuple[float, float]]:
             lon = -abs(lon)
 
         return (lat, lon)
+    
     except json.JSONDecodeError as e:
         print(f"Error al decodificar JSON para {image_path}: {e}")
         return None
@@ -175,7 +176,7 @@ def plot_map_with_contextily(photo_locations: list, output_file: str, title: str
 
     # 6. Añadir el basemap satelital con zoom ajustado a 15
     try:
-        ctx.add_basemap(ax, source=ctx.providers.Esri.WorldImagery, zoom=19)
+        ctx.add_basemap(ax, source=ctx.providers.Esri.WorldImagery, zoom=20)
         print("Basemap añadido correctamente.\n")
     except Exception as e:
         print(f"Error al añadir basemap: {e}\n")
@@ -277,7 +278,7 @@ def generate_unique_colors(n: int, s=0.7, l=0.5) -> list:
 def main():
     # Directorio que contiene las imágenes
     # Modifica esta ruta según tus necesidades
-    image_directory = r"C:\Users\juanse77\Documents\Proyectos\GeoFotos\imgs"
+    image_directory = r"C:\Users\juanse77\Documents\Proyectos\GeoFotos\Fotos\Fotos animales-03"
 
     # Rutas de los archivos de salida
     output_csv = "coordenadas_fotos.csv"
